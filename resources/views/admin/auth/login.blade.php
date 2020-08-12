@@ -13,7 +13,7 @@
                             </div>
                         </div>
                         <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                            <span>الدخول للوحة التحكم </span>
+                            <span>{{__('messages.enterDashboard')}}</span>
                         </h6>
                     </div>
                     @include('admin.includes.alerts.errors')
@@ -24,7 +24,7 @@
                                 @csrf
                                 <fieldset class="form-group position-relative has-icon-left mb-0">
                                     <input type="text" name="email" class="form-control form-control-lg input-lg"
-                                           value="{{old('email')}}" id="email" placeholder="أدخل البريد الالكتروني ">
+                                           value="{{old('email')}}" id="email" placeholder="{{__('messages.enterEmail')}}">
                                     <div class="form-control-position">
                                         <i class="ft-user"></i>
                                     </div>
@@ -36,7 +36,7 @@
                                 <fieldset class="form-group position-relative has-icon-left">
                                     <input type="password" name="password" class="form-control form-control-lg input-lg"
                                            id="user-password"
-                                           placeholder="أدخل كلمة المرور">
+                                           placeholder="{{__('messages.enterPassword')}}">
                                     <div class="form-control-position">
                                         <i class="la la-key"></i>
                                     </div>
@@ -49,12 +49,12 @@
                                         <fieldset>
                                             <input type="checkbox" name="remember_me" id="remember-me"
                                                    class="chk-remember">
-                                            <label for="remember-me">تذكر دخولي</label>
+                                            <label for="remember-me">{{__('messages.rememberMe')}}</label>
                                         </fieldset>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i>
-                                    دخول
+                                    {{__('messages.login')}}
                                 </button>
                             </form>
                         </div>
