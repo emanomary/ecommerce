@@ -22,6 +22,7 @@ return [
     'status'=> 'Status',
     'undo'=> 'Undo',
     'save'=> 'Save',
+    'update'=> 'update',
     'enterEmail'=> 'Enter your email',
     'enterPassword'=> 'Enter your password',
     'rememberMe'=> 'Remember Me',
@@ -50,6 +51,11 @@ return [
     'mainCategoryName'=> 'Main Category Name',
     'successAddCategory'=> 'Successfully add Category',
     'errorAddCategory'=> 'An error occurred, category not saved',
-    'errorNotFoundMainCategory'=> 'This main category not found'
+    'errorNotFoundMainCategory'=> 'This main category not found',
+    'editMainCategory'=> 'Edit Main Category',
+    'successUpdateCategory'=> 'Successfully Update Category',
+    'errorUpdateCategory'=> 'An error occurred, category not updated',
+    'stores'=> 'Stores',
+    'addNewStore'=> 'Add New Store',
 
 ];

@@ -49,8 +49,10 @@ class LanguagesController extends Controller
                 return redirect()->route('admin.languages.edit', $id)->with(['error' => __('messages.errorNotFoundLanguage')]);
             }
 
-
-            if ($request->has('active'))
+            //update status
+            if (!$request->has('active'))
+                $request->request->add(['active' => 0]);
+            else
                 $request->request->add(['active' => 1]);
 
             $language->update($request->except(['_token']));

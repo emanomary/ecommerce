@@ -24,8 +24,9 @@ class MainCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'required|mimes:jpg,jpeg,png',
-            'category' => 'required|array|min:1',
+            //validate on add and create
+            'photo' => 'required_without:id|mimes:jpg,jpeg,png',
+            'category' => 'required_without|array|min:1',
             //to input all the field of array name,abbr,active
             'category.*.name' => 'required',
             'category.*.abbr' => 'required',

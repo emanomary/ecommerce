@@ -23,6 +23,7 @@ return [
     'status'=> 'الحالة',
     'undo'=> 'تراجع',
     'save'=> 'حفظ',
+    'update'=> 'تحديث',
     'enterEmail'=> 'ادخل بريدك الإلكتروني',
     'enterPassword'=> 'ادخل كلمة المرور',
     'rememberMe'=> 'تذكرني',
@@ -52,5 +53,10 @@ return [
     'successAddCategory'=> 'تم حفظ القسم بنجاح',
     'errorAddCategory'=> 'حدث خطأ ما، لم يتم حفظ القسم',
     'errorNotFoundMainCategory'=> 'هذا القسم غير موجوده',
+    'editMainCategory'=> 'تعديل القسم الرئيسي',
+    'successUpdateCategory'=> 'تم تحديث القسم بنجاح',
+    'errorUpdateCategory'=> 'حدث خطأ ما، لم يتم تحديث القسم',
+    'stores'=> 'المتاجر',
+    'addNewStore'=> 'إضافة متجر جديد',
 
 ];

@@ -32,7 +32,7 @@ Route::group(['middleware'=>'Auth:admin','namespace'=>'Admin'],function (){
         Route::post('update/{id}','LanguagesController@update')->name('admin.languages.update');
         Route::get('delete/{id}','LanguagesController@destroy')->name('admin.languages.delete');
     });
-    /************ begin languages route ***************************************/
+    /************ end languages route ***************************************/
 
     /************ begin main categories route ***************************************/
     Route::group(['prefix' => 'main-categories'], function () {
@@ -40,10 +40,21 @@ Route::group(['middleware'=>'Auth:admin','namespace'=>'Admin'],function (){
         Route::get('create','MainCategoryController@create')->name('admin.mainCategories.create');
         Route::post('store','MainCategoryController@store')->name('admin.mainCategories.store');
         Route::get('edit/{id}','MainCategoryController@edit')->name('admin.mainCategories.edit');
-        /*Route::post('update/{id}','MainCategoryController@update')->name('admin.mainCategories.update');
-        Route::get('delete/{id}','MainCategoryController@destroy')->name('admin.mainCategories.delete');*/
+        Route::post('update/{id}','MainCategoryController@update')->name('admin.mainCategories.update');
+        /*Route::get('delete/{id}','MainCategoryController@destroy')->name('admin.mainCategories.delete');*/
     });
-    /************ begin languages route ***************************************/
+    /************ end main categories route ***************************************/
+
+    /************ begin vendors route ***************************************/
+    Route::group(['prefix' => 'vendors'], function () {
+        /*Route::get('/','VendorController@index')->name('admin.vendors.index');
+        Route::get('create','VendorController@create')->name('admin.vendors.create');
+        Route::post('store','VendorController@store')->name('admin.vendors.store');
+        Route::get('edit/{id}','VendorController@edit')->name('admin.vendors.edit');
+        Route::post('update/{id}','VendorController@update')->name('admin.vendors.update');
+        Route::get('delete/{id}','VendorController@destroy')->name('admin.mainCategories.delete');*/
+    });
+    /************ end vendors route ***************************************/
 });
 
 

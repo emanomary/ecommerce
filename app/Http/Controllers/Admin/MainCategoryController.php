@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MainCategoryRequest;
+use App\Models\Language;
 use App\Models\MainCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -96,9 +97,62 @@ class MainCategoryController extends Controller
      */
     public function edit($id)
     {
-        $main_category = MainCategory::selection()->find($id);
+        //get data of main category and it's translations
+        $mainCategory = MainCategory::with('category')->selection()->find($id);
 
-        if(!$main_category)
+        if(!$mainCategory)
             return redirect()->route('admin.mainCategories.index')->with(['error' => __('messages.errorNotFoundMainCategory')]);
+
+        return view('admin.mainCategories.edit',compact('mainCategory'));
+    }
+
+    /**
+     * update main category according to default language in database
+     */
+    public function update(MainCategoryRequest $request,$id)
+    {
+        try{
+            //validation
+            //check id
+            $mainCategory = MainCategory::find($id);
+
+            if(!$mainCategory)
+                return redirect()->route('admin.mainCategories.index')->with(['error' => __('messages.errorNotFoundMainCategory')]);
+
+            //get data of category
+            $category = array_values($request->category) [0];
+
+            //update status
+            if (!$request->has('category.0.active'))
+                $request->request->add(['active' => 0]);
+            else
+                $request->request->add(['active' => 1]);
+
+            //update data
+            MainCategory::where('id',$id)
+                ->update([
+                    'name'=> $category['name'],
+                    'active'=> $request->active,
+                ]);
+
+            //update image
+            if ($request->has('photo')) {
+                $image_path = uploadImage('maincategories', $request->photo);
+
+                //update image
+                MainCategory::where('id',$id)
+                    ->update([
+                        'photo'=> $image_path
+                    ]);
+
+            }
+
+            return redirect()->route('admin.mainCategories.index')->with(['success' => __('messages.successUpdateCategory')]);
+
+        }catch(\Exception $ex)
+        {
+            return redirect()->route('admin.mainCategories.index')->with(['error' => __('messages.errorUpdateCategory')]);
+        }
+
     }
 }
