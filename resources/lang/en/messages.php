@@ -57,5 +57,10 @@ return [
     'errorUpdateCategory'=> 'An error occurred, category not updated',
     'stores'=> 'Stores',
     'addNewStore'=> 'Add New Store',
-
+    'vendors'=> 'Vendors',
+    'allVendors'=> 'All Vendors',
+    'MainCategoryId'=> 'Main Category',
+    'vendorName'=> 'Vendor Name',
+    'logo'=> 'Logo',
+    'mobile'=> 'Mobile',
 ];

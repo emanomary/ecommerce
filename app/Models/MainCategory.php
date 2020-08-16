@@ -36,4 +36,9 @@ class MainCategory extends Model
     {
         return $this->hasMany(self::class,'translation_of');
     }
+
+    public function vendor()
+    {
+        return $this->hasMany('App/Models/Vendor','main_category_id','id ');
+    }
 }

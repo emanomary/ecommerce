@@ -47,8 +47,8 @@ Route::group(['middleware'=>'Auth:admin','namespace'=>'Admin'],function (){
 
     /************ begin vendors route ***************************************/
     Route::group(['prefix' => 'vendors'], function () {
-        /*Route::get('/','VendorController@index')->name('admin.vendors.index');
-        Route::get('create','VendorController@create')->name('admin.vendors.create');
+        Route::get('/','VendorController@index')->name('admin.vendors.index');
+        /*Route::get('create','VendorController@create')->name('admin.vendors.create');
         Route::post('store','VendorController@store')->name('admin.vendors.store');
         Route::get('edit/{id}','VendorController@edit')->name('admin.vendors.edit');
         Route::post('update/{id}','VendorController@update')->name('admin.vendors.update');

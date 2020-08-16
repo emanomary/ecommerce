@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMainCategoriesTable extends Migration
+class CreateVendorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateMainCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('main_categories', function (Blueprint $table) {
+        Schema::create('vendors', function (Blueprint $table) {
             $table->id();
-            $table->string('translation_lang',10);
-            $table->integer('translation_of')->unsigned();
             $table->string('name',150);
-            $table->string('slug',150)->nullable();
-            $table->string('photo',150)->nullable();
-            $table->tinyInteger('active')->default(1);
+            $table->string('logo',100);
+            $table->string('mobile',100);
+            $table->string('email',100)->nullable();
+            $table->text('address');
+            $table->integer('main_category_id')->unsigned();
+            $table->tinyInteger('active')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateMainCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('main_categories');
+        Schema::dropIfExists('vendors');
     }
 }

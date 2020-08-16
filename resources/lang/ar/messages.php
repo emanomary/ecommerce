@@ -58,5 +58,11 @@ return [
     'errorUpdateCategory'=> 'حدث خطأ ما، لم يتم تحديث القسم',
     'stores'=> 'المتاجر',
     'addNewStore'=> 'إضافة متجر جديد',
+    'vendors'=> 'المتاجر',
+    'allVendors'=> 'جميع المتاجر',
+    'MainCategoryId'=> 'القسم الرئيسي',
+    'vendorName'=> 'اسم المتجر',
+    'logo'=> 'الشعار',
+    'mobile'=> 'الهاتف/الجوال',
 
 ];
